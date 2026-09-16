@@ -1,0 +1,48 @@
+name: Bug report
+description: A skill is wrong, stale, or doesn't produce the behavior it describes.
+labels: ["bug"]
+body:
+  - type: dropdown
+    id: skill
+    attributes:
+      label: Which skill?
+      options:
+        - engineering-partner
+        - app-store-compliance
+        - angular-ionic-capacitor
+        - Repo tooling (validator, CI, plugin manifest)
+        - Other / not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect the skill to do?
+      description: Quote the relevant line from SKILL.md if you can.
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: What actually happened?
+      description: What did the agent do instead? Paste a transcript excerpt if you have one.
+    validations:
+      required: true
+
+  - type: input
+    id: agent
+    attributes:
+      label: Which agent/harness were you using?
+      placeholder: "Claude Code, Cursor, Codex, etc., and version if known"
+    validations:
+      required: false
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Anything else worth knowing?
+      description: e.g. a policy/version reference that's gone stale, a platform detail, etc.
+    validations:
+      required: false

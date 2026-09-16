@@ -1,0 +1,47 @@
+name: New skill proposal
+description: Propose a new skill before writing the whole thing.
+labels: ["new skill"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        See [CONTRIBUTING.md](https://github.com/GeorgeShani/skills/blob/main/CONTRIBUTING.md) for what makes a good submission before filling this in.
+
+  - type: input
+    id: name
+    attributes:
+      label: Proposed skill name
+      placeholder: "kebab-case, e.g. database-migration-review"
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What situation does this help with?
+      description: Be concrete. What does an agent currently do wrong, or fail to do, without this skill?
+    validations:
+      required: true
+
+  - type: textarea
+    id: behavior-change
+    attributes:
+      label: What would an agent do differently with this skill, versus without it?
+      description: This is the load-bearing test from CONTRIBUTING.md — if you can't describe a concrete before/after, the idea likely isn't ready yet.
+    validations:
+      required: true
+
+  - type: textarea
+    id: coverage
+    attributes:
+      label: Why doesn't an existing skill here already cover this?
+    validations:
+      required: false
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Have you tried this as an ad hoc prompt first?
+      description: A transcript excerpt showing it working (even informally) makes this much easier to evaluate.
+    validations:
+      required: false

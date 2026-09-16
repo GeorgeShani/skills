@@ -33,7 +33,10 @@ collection grows past roughly a dozen skills and a flat list stops being scannab
    [`.claude-plugin/plugin.json`](.claude-plugin/plugin.json).
 3. Add a row for it to the table in [`README.md`](README.md), linking the skill name to
    its `SKILL.md`.
-4. Run `npm run validate` before committing — it checks frontmatter, folder-name
+4. Add it to the skill dropdown in
+   [`.github/ISSUE_TEMPLATE/bug_report.yml`](.github/ISSUE_TEMPLATE/bug_report.yml).
+   The validator doesn't check this one; it's easy to forget.
+5. Run `npm run validate` before committing — it checks frontmatter, folder-name
    consistency, and that `plugin.json` and `README.md` haven't drifted from what's
    actually in `skills/`.
 

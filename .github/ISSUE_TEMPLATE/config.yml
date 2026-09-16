@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Contributing guide
+    url: https://github.com/GeorgeShani/skills/blob/main/CONTRIBUTING.md
+    about: Read this first if you're planning to submit a skill or a fix.
