@@ -3,6 +3,8 @@
 This started as a personal skills collection, but pull requests are welcome — a new
 skill, a fix to an existing one, or a correction to something that's gone stale.
 
+Participation here is governed by the [Code of Conduct](CODE_OF_CONDUCT.md).
+
 ## What makes a good submission
 
 - **Generically useful.** A skill here should work for anyone who reads it, not just
