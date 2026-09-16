@@ -60,6 +60,11 @@ skills/
 
 See [`CLAUDE.md`](CLAUDE.md) for the conventions this repo follows and how to add a new skill.
 
+## Contributing
+
+Pull requests welcome — see [`CONTRIBUTING.md`](CONTRIBUTING.md) for what makes a good
+skill submission and the steps to add one.
+
 ## Validating
 
 ```bash
