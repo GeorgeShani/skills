@@ -1,0 +1,26 @@
+{
+  "name": "georgeshani",
+  "owner": {
+    "name": "George Shanidze",
+    "url": "https://github.com/GeorgeShani"
+  },
+  "description": "George Shanidze's agent skills, as an installable Claude Code plugin.",
+  "plugins": [
+    {
+      "name": "georgeshani-skills",
+      "source": "./",
+      "description": "An engineering mentor/reviewer persona, Apple App Store & Google Play compliance auditing, and Angular + Ionic + Capacitor stack guidance.",
+      "category": "engineering",
+      "keywords": [
+        "engineering",
+        "mentor",
+        "code-review",
+        "app-store",
+        "compliance",
+        "angular",
+        "ionic",
+        "capacitor"
+      ]
+    }
+  ]
+}
