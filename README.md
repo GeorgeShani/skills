@@ -75,6 +75,10 @@ Checks that every skill has well-formed frontmatter, that folder names match the
 declared `name`, and that `.claude-plugin/plugin.json` and this README haven't drifted
 from what's actually under `skills/`. Runs in CI on every push and pull request.
 
+## Changelog
+
+See [`CHANGELOG.md`](CHANGELOG.md) for what changed between versions.
+
 ## License
 
 MIT, see [`LICENSE`](LICENSE). Individual skills may declare a more permissive license
