@@ -1,6 +1,6 @@
 {
   "name": "georgeshani-skills",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "George Shanidze's agent skills for Claude Code, Codex, Cursor, and any other Agent Skills compatible harness.",
   "homepage": "https://github.com/GeorgeShani/skills",

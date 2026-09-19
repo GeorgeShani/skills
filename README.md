@@ -8,7 +8,7 @@ My [Agent Skills](https://agentskills.io) — portable `SKILL.md` files that wor
 |---|---|
 | [`engineering-partner`](skills/engineering-partner/SKILL.md) | An engineering mentor and reviewer with two modes: **Build Mode** for production-quality implementation with explained trade-offs and honest pushback, and **Learn Mode** for going deep on a concept (mechanism-level, primary sources, a hands-on next step) rather than just shipping. |
 | [`app-store-compliance`](skills/app-store-compliance/SKILL.md) | Audits a mobile app against Apple App Store and Google Play publication requirements before submission, and diagnoses rejections after them — privacy policy, account deletion, SDK/target-API floors, data-disclosure forms, and regional law (GDPR, EAA, DSA, age assurance). |
-| [`angular-ionic-capacitor`](skills/angular-ionic-capacitor/SKILL.md) | Guidance for building and shipping production-grade Angular + Ionic + Capacitor apps: one codebase for web, iOS, and Android. Covers current framework versions, project setup, MCP servers, state management, testing, and native CI/CD. |
+| [`angular-ionic-capacitor`](skills/angular-ionic-capacitor/SKILL.md) | Guidance for a single Angular + Ionic + Capacitor codebase shipping to web, iOS, and Android: project setup and tooling, plus frontend architecture, CI/CD pipeline design, branch strategy, and store release (TestFlight, App Store, Google Play). |
 
 ## Installing
 
@@ -55,7 +55,8 @@ skills/
 │   ├── references/          apple, google play, cross-platform, legal, rejection playbook
 │   └── assets/               pre-submission-checklist.md (standalone, copy into your repo)
 └── angular-ionic-capacitor/
-    └── SKILL.md
+    ├── SKILL.md              router: which reference to read for what
+    └── references/           stack-and-tooling.md, architecture-and-release-engineering.md
 ```
 
 See [`CLAUDE.md`](CLAUDE.md) for the conventions this repo follows and how to add a new skill.

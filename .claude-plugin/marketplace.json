@@ -9,7 +9,7 @@
     {
       "name": "georgeshani-skills",
       "source": "./",
-      "description": "An engineering mentor/reviewer persona, Apple App Store & Google Play compliance auditing, and Angular + Ionic + Capacitor stack guidance.",
+      "description": "A growing collection of agent skills covering software engineering, mobile release engineering, and app store publishing.",
       "category": "engineering",
       "keywords": [
         "engineering",
@@ -19,7 +19,9 @@
         "compliance",
         "angular",
         "ionic",
-        "capacitor"
+        "capacitor",
+        "release-engineering",
+        "ci-cd"
       ]
     }
   ]

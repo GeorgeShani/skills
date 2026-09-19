@@ -1,7 +1,7 @@
 {
   "name": "georgeshani-skills",
-  "version": "0.1.0",
-  "description": "George Shanidze's agent skills: an engineering mentor/reviewer persona, Apple App Store & Google Play compliance auditing, and Angular + Ionic + Capacitor stack guidance.",
+  "version": "0.2.0",
+  "description": "George Shanidze's agent skills — a growing collection covering software engineering, mobile release engineering, and app store publishing. See the individual skill descriptions for what's actually in here today.",
   "author": {
     "name": "George Shanidze",
     "url": "https://github.com/GeorgeShani"
@@ -19,7 +19,9 @@
     "compliance",
     "angular",
     "ionic",
-    "capacitor"
+    "capacitor",
+    "release-engineering",
+    "ci-cd"
   ],
   "skills": [
     "./skills/angular-ionic-capacitor",

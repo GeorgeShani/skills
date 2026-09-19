@@ -14,6 +14,22 @@ skills/<skill-name>/assets/       optional, standalone artifacts (checklists, te
 Skills live flat under `skills/`, no category subfolders. Revisit this only if the
 collection grows past roughly a dozen skills and a flat list stops being scannable.
 
+## Before adding a new skill folder
+
+Check whether the new content is really a new *topic*, or more depth on a topic an
+existing skill already owns. If an existing skill's frontmatter `description` would
+already plausibly match the new content's trigger conditions, it's the latter — fold
+the new material in as a `references/` file under the existing skill instead of
+creating a sibling folder that overlaps it. Two folders that both fire on "the Angular
+app" or "the mobile pipeline" just makes triggering ambiguous for no benefit.
+
+`angular-ionic-capacitor` is the working example: it started as one file, then grew a
+`references/` split (`stack-and-tooling.md`, `architecture-and-release-engineering.md`)
+with `SKILL.md` reduced to a short router, rather than becoming a second
+`angular-ionic-capacitor-engineering` folder next to it. When a skill's `SKILL.md` grows
+past a page or so of unrelated concerns, that's the signal to split it this way, not to
+fork it into a new skill.
+
 ## Conventions every skill follows
 
 - `SKILL.md` frontmatter has exactly `name` and `description` at minimum. `name` must
@@ -42,6 +58,15 @@ collection grows past roughly a dozen skills and a flat list stops being scannab
 
 Removing a skill is the same steps in reverse: delete the folder, drop it from
 `plugin.json`, drop its README row.
+
+## Repo-level descriptions
+
+The `description` fields in `package.json`, `.claude-plugin/plugin.json`, and
+`.claude-plugin/marketplace.json` describe the collection, not its current member list —
+write them so they stay true as skills are added or removed (e.g. "a growing collection
+covering X, Y, and more"), not as an enumeration of today's skills by name. The README's
+table is where per-skill specifics belong; keep it in sync per skill (see above), but
+don't duplicate that specificity into the manifests.
 
 ## Versioning
 
