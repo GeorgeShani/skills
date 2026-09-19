@@ -70,11 +70,31 @@ npx cap sync ios
 npx cap open ios        # then run from Xcode
 ```
 
-⚠️ **Native config gotcha:** `cap sync` copies web assets and updates native dependencies, but it does **not** reliably propagate every native-side config change. After adding or changing a Capacitor plugin's permissions or capabilities, manually verify:
-- iOS: `Info.plist` entries (usage descriptions, entitlements)
-- Android: `AndroidManifest.xml` permissions
+⚠️ **`android/` and `ios/` are committed source, not disposable build output.** Hand-editing
+native code, config, and IDE-managed settings there is normal and expected. `cap sync` is
+`cap copy` (copies the web build + `capacitor.config.ts` into each native project) plus
+`cap update` (reconciles native dependencies for installed Capacitor plugins — `pod install`
+on iOS, Gradle plugin wiring on Android). Only a few specific paths get regenerated each
+sync; everything else you hand-edit persists across syncs indefinitely.
 
-Treat this as a required manual checklist item in PRs that touch native plugin config — CI will not catch a missing permission string.
+| Survives every sync (safe to hand-edit) | Overwritten every sync (never hand-edit) |
+|---|---|
+| Custom native code (Swift/Kotlin/Java, custom plugins) | `ios/App/App/public/*` and `android/app/src/main/assets/public/*` — replaced with the latest web build |
+| `Info.plist` entries, `AndroidManifest.xml` permissions you added | The `capacitor.config.json` copied into each native project — edit the root `capacitor.config.ts` instead, never the copy |
+| `Podfile` / `build.gradle` entries outside the Capacitor-managed block | The Capacitor-managed Podfile block and Android's `capacitor.settings.gradle` / `variables.gradle` — regenerated from installed npm plugins |
+| Signing configs, build variants, app icons, splash screens | |
+
+**iOS-specific trap:** linking a framework through Xcode's own "Frameworks and Libraries"
+panel, instead of the Podfile, isn't tracked by CocoaPods. The next `pod install` — which
+`cap sync` triggers — can rewrite `project.pbxproj` and drop that manual link. Add framework
+dependencies through the Podfile so they survive resync, not through Xcode's linking UI.
+
+Rule of thumb: plugin-level dependencies go through npm plus the plugin's own install step
+(it updates Podfile/Gradle correctly on its own); project-wide native settings — permissions,
+entitlements, custom native code — go directly into the native IDEs. After adding or changing
+a plugin's permissions specifically, manually verify `Info.plist` / `AndroidManifest.xml` were
+actually updated; treat this as a required checklist item in PRs that touch native plugin
+config, since CI will not catch a missing permission string.
 
 ## Git branch strategy
 

@@ -9,6 +9,12 @@ an entry here — see [`CLAUDE.md`](CLAUDE.md#versioning).
 
 ## Unreleased
 
+### Added
+
+- `angular-ionic-capacitor`: a safe-to-edit/never-edit table for `android/` and `ios/`
+  covering exactly what `cap sync` regenerates vs. what persists across syncs, plus the
+  CocoaPods/Xcode-linking trap, in `references/architecture-and-release-engineering.md`
+
 ## 0.2.0 - 2026-09-19
 
 ### Added
